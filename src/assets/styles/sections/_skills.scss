@@ -1,0 +1,85 @@
+@import "../util/var";
+@import "../util/mixins";
+
+
+//SKILLS
+
+.skills {
+    max-width: 140rem;
+    width: 100%;
+    margin-bottom: 11rem;
+
+    &-title {
+        @include fontTitle;
+
+    }
+
+    &-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &-card {
+        max-width: 28rem;
+        width: 100%;
+
+        &__img {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5rem;
+        }
+
+        &__pic {
+            max-width: 6.2rem;
+            width: 100%;
+            
+        }
+        &__pic2 {
+            max-width: 6rem;
+            width: 100%;
+        }
+        &__pic3 {
+            max-width: 6.6rem;
+            width: 100%;
+        }
+        &__pic4 {
+            max-width: 3.2rem;
+            width: 100%;
+        }
+
+        &__title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 2rem;
+            line-height: 4rem;
+            text-align: center;
+            color: $c-white;
+            margin-bottom: 2rem;
+        }
+        &__text {
+            @include cardText;
+        }
+    }
+}
+span {
+    position: relative;
+
+    &:before {
+        display: block;                  
+        width: 23rem;                    
+        content: '';                     
+        position: absolute;              
+        border-bottom: .2rem solid $c-gold;   
+        top:50%;                         
+        right: 13rem;                    
+    }
+    &:after {
+        display: block;
+        width: 23rem;
+        content: '';
+        position: absolute;
+        border-bottom: .2rem solid $c-gold;
+        top:50%;
+        left: 13rem; 
+    }
+}
