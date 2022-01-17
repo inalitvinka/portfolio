@@ -1,0 +1,12 @@
+@import "util/normalize";
+// файл обнуляющих стилей
+@import "util/global"; 
+
+@import "sections/header";
+@import "sections/hero";
+@import "sections/skills";
+@import "sections/portfolio";
+@import "sections/video";
+@import "sections/price";
+@import "sections/contacts";
+@import "sections/footer";

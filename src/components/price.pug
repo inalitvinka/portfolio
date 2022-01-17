@@ -1,0 +1,17 @@
+//PRICE
+
+mixin cardPrice (title, subtitle, text)
+  .price-card
+      h3.price-card__title= title
+      h3.price-card__subtitle= subtitle
+      p.price-card__text= text   
+      .price-cards__button
+        button.price-cards__btn Order shooting
+
+
+section.price.container
+  h2#price.price-title <span>Price</span>
+  .price-cards
+    +cardPrice ('Standard', '500 $', 'One location location 120 photos in color color 12 photos in retouch Readiness 2-3 weeks Make up, visage')
+    +cardPrice ('Premium', '700 $', 'One or two locations 200 photos in color color 20 photos in retouch Readiness 1-2 weeks Make up, visage' )
+    +cardPrice ('Gold', '1000 $', 'Three locations or more 300 photos in color color 50 photos in retouch Readiness about 1 week Make up, visage')
