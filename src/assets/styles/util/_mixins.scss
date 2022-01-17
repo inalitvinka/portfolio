@@ -1,0 +1,20 @@
+@mixin fontTitle {
+    font-family: Merriweather;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 8rem;
+    text-align: center;
+    color: $c-gold;
+    margin-bottom: 6rem;
+}
+
+@mixin cardText {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 3.6rem;
+    text-align: center;
+    color: $c-white;
+
+}
