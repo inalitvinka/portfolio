@@ -1,0 +1,24 @@
+//PORTFOLIO
+mixin button(title, value)
+  button.portfolio-btn(class= value)= title
+
+section.portfolio.container
+  h2#portfolio.portfolio-title <span>Portfolio</span>
+  .portfolio-buttons
+    +button('Winter')
+    +button('Spring')
+    +button('Summer')
+    +button('Autumn', 'portfolio-btn__active')
+  .portfolio-gallery
+    .img
+      img.portfolio-pic(src='assets/images/portfolioImg.jpg' alt='portfolio-img')
+    .img-one
+      img.portfolio-pic(src='assets/images/portfolioImg-one.jpg' alt='portfolio-img')
+    .img-two
+      img.portfolio-pic(src='assets/images/portfolioImg-two.jpg' alt='portfolio-img')
+    .img-three
+      img.portfolio-pic(src='assets/images/portfolioImg-three.jpg' alt='portfolio-img')
+    .img-four
+      img.portfolio-pic(src='assets/images/portfolioImg-four.jpg' alt='portfolio-img')
+    .img-five
+      img.portfolio-pic(src='assets/images/portfolioImg-five.jpg' alt='portfolio-img')
