@@ -1,0 +1,50 @@
+@import "../util/var";
+@import "../util/mixins";
+
+//FOOTER
+.footer {
+    width: 100%;
+
+    &-wrapper {
+        padding: 5rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-content {
+        max-width: 18.2rem;
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+     
+     }
+    &__info,
+    &__link {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 2rem;
+        line-height: 5rem;
+        color: $c-white;
+    }
+    &-logo {
+        max-width: 10rem;
+        width: 100%;  
+    }
+    &-icon {
+        max-width: 2.6rem;
+        width: 100%;
+    }
+    &-list {
+        max-width: 18.8rem;
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+
+    }
+}
+a:hover, 
+a:focus, 
+a:active {
+   color: $hvrColor;
+   transform: scale(1.2);
+}

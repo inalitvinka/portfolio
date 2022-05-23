@@ -1,0 +1,31 @@
+@import "../util/var";
+@import "../util/mixins";
+
+
+//VIDEO
+.video {
+    width: 100%;
+    margin-bottom: 10rem;
+
+    &-title {
+        @include fontTitle;
+    
+    }
+    &-player {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-play {
+        max-width: 140rem;
+        width: 100%;
+    }
+    &-pic {
+        max-width: 12.986rem;
+        width: 100%;
+        position: absolute;
+        top: 40.9%;
+        left: 45.43%;
+    }
+}

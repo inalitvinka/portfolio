@@ -1,0 +1,83 @@
+@import "../util/var";
+@import "../util/mixins";
+
+
+//PRICE
+.price {
+    margin-bottom: 11rem;
+    width: 100%;
+
+    &-title {
+        @include fontTitle;
+    
+    }
+
+    &-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+        
+        &__button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__btn {
+            font-family: inherit;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 2rem;
+            line-height: 200%;
+            text-align: center;
+            border: none;
+            color: $bgColor;
+            padding: .8rem 3rem .7rem 3rem;
+            max-width: 22rem;
+            width: 100%;
+            background: $c-gold;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $hvrColor;
+                color: $c-white;
+            }
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 .1rem $fcsColor;
+            }
+
+        }
+    } 
+    &-card {
+        max-width: 45rem;
+        width: 100%;
+        border: solid .3rem $c-gold;
+        padding: 4.3rem 11.5rem;
+
+        &__title {
+            font-family: Merriweather;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 2.8rem;
+            line-height: 5.6rem;
+            text-align: center;
+            color: $c-white;
+            margin-bottom: 2rem;
+        }
+        &__subtitle {
+            font-family: Merriweather;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 2.4rem;
+            line-height: 4.8rem;
+            text-align: center;
+            color: $c-gold;
+            margin-bottom: 2rem;
+        }
+        &__text {
+            @include cardText;
+            margin-bottom: 4rem;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+//SKILLS
+
+mixin cardSkills (size, src, title, text)
+  .skills-card
+      .skills-card__img
+        img(class= size)(src= src, alt="skill-img")
+      h3.skills-card__title= title
+      p.skills-card__text= text
+  
+section.skills.container
+  h2#skills.skills-title <span>Skills</span>
+  .skills-cards
+    +cardSkills ('skills-card__pic', 'assets/images/svg/camera.svg', 'Digital photography', 'High-quality photos in the studio and on the nature')
+    +cardSkills ('skills-card__pic2', 'assets/images/svg/video.svg', 'Video shooting', 'High-quality photos in the studio and on the nature')
+    +cardSkills ('skills-card__pic3', 'assets/images/svg/image.svg', 'Retouch', 'I strive to make photography surpass reality')
+    +cardSkills ('skills-card__pic4', 'assets/images/svg/mic.svg', 'Audio', 'Professional sounds recording for video, advertising, portfolio' )  

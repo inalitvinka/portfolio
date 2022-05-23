@@ -1,0 +1,81 @@
+@import "../util/var";
+@import "../util/mixins";
+
+
+//PORTFOLIO
+.portfolio {
+    margin-bottom: 10rem;
+    width: 100%;
+
+    & span {
+        
+        &:before {         
+            right: 20rem;                    
+        }
+        &:after {         
+            left: 20rem;                    
+        }
+    }
+
+    &-title {
+        @include fontTitle;
+    
+    }
+
+    &-buttons {
+        margin-bottom: 6rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: .5rem;
+
+    }
+    
+    &-btn {
+        font-family: inherit;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 2rem;
+        line-height: 4rem;
+        text-align: center;
+        color: $c-gold;
+        border: .2rem solid $c-gold;
+        padding: .8rem .79rem .7rem .79rem;
+        max-width: 22rem;
+        width: 100%;
+        background: transparent;
+        cursor: pointer;
+    
+        // &__active {
+        //     background: $c-gold;
+        //     color: inherit;
+        // }
+        &:hover {
+            background-color: $hvrColor;
+            color: $c-white;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 .1rem $fcsColor;
+        }
+    }
+
+    &-gallery {
+        max-width: 140rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "img img-one img-two"
+                             "img-three img-four img-five";
+        row-gap: 2.5rem; 
+        column-gap: 2.5rem;                    
+    } 
+    &-pic {
+        max-width: 45rem;
+        width: 100%;
+    }
+}
+.active {
+    background: $c-gold;
+    color: inherit;
+}
