@@ -20,9 +20,9 @@
             font-weight: 700;
             line-height: 250%;
             color: inherit;
-            // &:nth-child(odd) {
-            //     cursor: pointer;
-            // }
+            &:nth-child(odd) {
+                cursor: pointer;
+            }
         }
         &_active {
             color: $c-gold;

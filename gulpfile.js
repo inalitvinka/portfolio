@@ -43,7 +43,11 @@ function images() {
         .pipe(dest('build/assets/images'))
         .pipe(browserSync.stream())
 }
-
+function videos() {
+    return src('src/assets/video/**/*')
+        .pipe(dest('build/assets/video'))
+        .pipe(browserSync.stream())
+}
 function fonts() {
     return src('src/assets/fonts/**/*')
         .pipe(dest('build/assets/fonts'))
@@ -69,8 +73,8 @@ function startWatch() {
     watch('src/scripts/index.js', js)
 }
 
-exports.dev = parallel(browsersync, startWatch, html, css, images, fonts, js)
-exports.build = series(clear, parallel(html, css, images, fonts, js))
+exports.dev = parallel(browsersync, startWatch, html, css, images, videos, fonts, js)
+exports.build = series(clear, parallel(html, css, images, videos, fonts, js))
 
 
-exports.default = parallel(browsersync, startWatch, html, css, images, fonts, js)
+exports.default = parallel(browsersync, startWatch, html, css, images, videos, fonts, js)
