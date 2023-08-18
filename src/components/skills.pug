@@ -1,16 +1,16 @@
 //SKILLS
 
-mixin cardSkills (size, src, title, text)
+mixin cardSkills (size, src, title, text, dataTitle, dataText)
   .skills-card
       .skills-card__img
         img(class= size)(src= src, alt="skill-img")
-      h3.skills-card__title= title
-      p.skills-card__text= text
+      h3(data-i18n= dataTitle).skills-card__title= title 
+      p(data-i18n= dataText).skills-card__text= text
   
 section.skills.container
-  h2#skills.skills-title <span>Skills</span>
+  h2#skills.skills-title(data-i18n= 'skills') <span>Skills</span>
   .skills-cards
-    +cardSkills ('skills-card__pic', 'assets/images/svg/camera.svg', 'Digital photography', 'High-quality photos in the studio and on the nature')
-    +cardSkills ('skills-card__pic2', 'assets/images/svg/video.svg', 'Video shooting', 'High-quality photos in the studio and on the nature')
-    +cardSkills ('skills-card__pic3', 'assets/images/svg/image.svg', 'Retouch', 'I strive to make photography surpass reality')
-    +cardSkills ('skills-card__pic4', 'assets/images/svg/mic.svg', 'Audio', 'Professional sounds recording for video, advertising, portfolio' )  
+    +cardSkills ('skills-card__pic', 'assets/images/svg/camera.svg', 'Digital photography', 'High-quality photos in the studio and on the nature', 'skill-title-1', 'skill-text-1')
+    +cardSkills ('skills-card__pic2', 'assets/images/svg/video.svg', 'Video shooting', 'Capture your moments so that they always stay with you', 'skill-title-2', 'skill-text-2')
+    +cardSkills ('skills-card__pic3', 'assets/images/svg/image.svg', 'Retouch', 'I strive to make photography surpass reality', 'skill-title-3', 'skill-text-3')
+    +cardSkills ('skills-card__pic4', 'assets/images/svg/mic.svg', 'Audio', 'Professional sounds recording for video, advertising, portfolio', 'skill-title-4', 'skill-text-4')  

@@ -4,6 +4,7 @@
 
 html {
     font-size: 10px;
+    scroll-behavior: smooth; 
 }
 
 * {
@@ -20,23 +21,34 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+button {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+}
+
 a {
     display: inline-block;
     background: transparent;
     text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:visited {
     text-decoration: none;
 }
 
-ul {
+ul li {
     list-style: none;
 }
 
 img {
     max-width: 100%;
     width: 100%;
+    vertical-align: top;
+}
+textarea {
+    resize: none;
 }
 
 body {
@@ -45,12 +57,45 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     font-family: 'Inter', sans-serif;
-    background-color: $bgColor;
+    background-color: $c-dark;
+    color: $c-white;
 }
 
 .container {
-    max-width: 1440px; // content width plus paddings
+    max-width: 148rem; // content width plus paddings
     margin: 0 auto;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+// HERO HEADER BACKGROUND
+.background-wrapper { 
+    background-image: url('../images/header-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+}
+// LIGHT MODE
+.hero-light {
+    background-image: url('../images/hero-light.jpg');
+}
+.light-theme {
+    background-color: $c-white;
+    color: $c-dark;
+}
+// ADAPTIVE
+@media screen and (max-width: 1200px) {
+    .background-wrapper {
+        background-position: 1.5rem -3rem;
+        background-size: auto 88%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .background-wrapper {
+        // width: 768rem;
+        // height: 590px;
+        background-position: 1.5rem -3rem;
+        background-size: auto 103.5%;
+    }
 }

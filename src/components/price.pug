@@ -1,17 +1,15 @@
 //PRICE
-
-mixin cardPrice (title, subtitle, text)
+mixin cardPrice (title, subtitle, data1, data2, data3, data4, data5, text1, text2, text3, text4, text5)
   .price-card
-      h3.price-card__title= title
+      h3(data-i18n= title).price-card__title= title
       h3.price-card__subtitle= subtitle
-      p.price-card__text= text   
-      .price-cards__button
-        button.price-cards__btn Order shooting
-
+      p.price-card__text <span data-i18n="#{data1}">#{text1}<br></span><span data-i18n="#{data2}">#{text2}<br></span><span data-i18n="#{data3}">#{text3}<br></span><span data-i18n="#{data4}">#{text4}<br></span><span data-i18n="#{data5}">#{text5}</span>
+      .price-card__button
+        a.price-card__btn(href="#" data-i18n= 'order') Order shooting
 
 section.price.container
-  h2#price.price-title <span>Price</span>
+  h2#price.price-title(data-i18n= 'price') <span>Price</span>
   .price-cards
-    +cardPrice ('Standard', '500 $', 'One location location 120 photos in color color 12 photos in retouch Readiness 2-3 weeks Make up, visage')
-    +cardPrice ('Premium', '700 $', 'One or two locations 200 photos in color color 20 photos in retouch Readiness 1-2 weeks Make up, visage' )
-    +cardPrice ('Gold', '1000 $', 'Three locations or more 300 photos in color color 50 photos in retouch Readiness about 1 week Make up, visage')
+    +cardPrice ('standart', '500 $', 'price-description-1-span-1', 'price-description-1-span-2', 'price-description-1-span-3', 'price-description-1-span-4', 'price-description-1-span-5', 'One location', '120 photos in color', '12 photos in retouch', 'Readiness 2-3 weeks', 'Make up, visage')
+    +cardPrice ('premium', '700 $', 'price-description-2-span-1', 'price-description-2-span-2', 'price-description-2-span-3', 'price-description-2-span-4', 'price-description-2-span-5', 'One or two locations', '200 photos in color', '20 photos in retouch', 'Readiness 1-2 weeks', 'Make up, visage')
+    +cardPrice ('gold', '1000 $', 'price-description-3-span-1', 'price-description-3-span-2', 'price-description-3-span-3', 'price-description-3-span-4', 'price-description-3-span-5', 'Three locations or more', '300 photos in color', '50 photos in retouch', 'Readiness 1 week', 'Make up, visage, hairstyle')

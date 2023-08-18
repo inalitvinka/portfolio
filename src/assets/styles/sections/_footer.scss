@@ -4,47 +4,67 @@
 //FOOTER
 .footer {
     width: 100%;
-
-    &-wrapper {
-        padding: 5rem 2rem;
+    padding: 5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-data,
+    &-data a {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    &-content {
-        max-width: 18.2rem;
-        width: 100%;
-        display: flex;
-        gap: 2rem;
-     
-     }
-    &__info,
-    &__link {
-        font-style: normal;
-        font-weight: normal;
+        gap: 1.3rem;
+        font-family: Inter;
         font-size: 2rem;
-        line-height: 5rem;
-        color: $c-white;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 250%;
+        // color: $c-white;    
     }
-    &-logo {
+    &-info {
+        @extend .footer-data;
+        text-transform: capitalize;
+    }
+    &-data a:hover {
+        color: $c-gold;
+        transition: all .4s ease;
+    }
+    &-githublogo {
+        max-width: 5rem;
+        border-radius: 3rem;
+        filter: invert(1);
+        // filter: invert(100%) sepia(1%) saturate(100%) hue-rotate(7deg) brightness(100%) contrast(100%);
+        &:hover {
+            // filter: invert(0);
+            filter: invert(100%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(70%) contrast(87%);
+            transition: all .4s ease;
+        }
+    }
+    &-rslogo {
         max-width: 10rem;
-        width: 100%;  
-    }
-    &-icon {
-        max-width: 2.6rem;
-        width: 100%;
+        width: 100%; 
+        // filter: invert(1) ; 
     }
     &-list {
-        max-width: 18.8rem;
-        width: 100%;
         display: flex;
-        gap: 2rem;
-
+        gap: 1.8rem;
+    }
+    // &-githublogo:hover,
+    &-rslogo:hover,
+    &-link:hover {
+       @include hoverSVG;
     }
 }
-a:hover, 
-a:focus, 
-a:active {
-   color: $hvrColor;
-   transform: scale(1.2);
+// .footer-githublogo,
+.svg-light {
+    filter: invert(1) ;
+    &:hover {
+        filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+        transition: all .4s ease;
+    } 
+}
+.gh-light {
+    filter: invert(0);
+    &:hover {
+        filter: invert(100%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(70%) contrast(87%);
+        transition: all .4s ease;
+    }
 }

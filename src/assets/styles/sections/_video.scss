@@ -5,27 +5,48 @@
 //VIDEO
 .video {
     width: 100%;
-    margin-bottom: 10rem;
-
+    padding: 10rem 2rem 0;
     &-title {
-        @include fontTitle;
-    
+        @include titleStyles;
     }
     &-player {
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        
     }
-    &-play {
-        max-width: 140rem;
+    &-screen {
+        max-width: 144rem;
         width: 100%;
     }
-    &-pic {
-        max-width: 12.986rem;
+    &-poster {
+        max-width: 144rem;
         width: 100%;
+    }
+    &-item {
+        width: 13rem;
         position: absolute;
-        top: 40.9%;
-        left: 45.43%;
+        top: 41%;
+        left: 45.5%;
+        &:hover {
+            @include hoverSVG;
+        }
+    }
+    &-button {
+        background: inherit;
+    }
+}
+//  ADAPTIVE 
+@media screen and (max-width: 768px) {
+    .video {
+        padding: 10rem 0 0;
+        &-title {
+            font-size: 3.2rem;
+        }
+        &-screen {
+            object-fit: fill;
+        }
+        &-item {
+            width: 6.5rem;
+
+        }
     }
 }

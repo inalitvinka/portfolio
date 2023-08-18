@@ -1,26 +1,30 @@
 //PORTFOLIO
-mixin button(title, value, val)
-  button.portfolio-btn(data-season= value, class= val)= title
+- var i = 0;
+- var cardNum = 6;
+mixin button(title, value, val, active)
+  button.portfolio-btn(data-season= value, data-i18n= value, class= val, class= active)= title
 
 section.portfolio.container
-  h2#portfolio.portfolio-title <span>Portfolio</span>
+  h2#portfolio.portfolio-title(data-i18n= 'portfolio') <span>Portfolio</span>
   .portfolio-buttons
     +button('Winter', 'winter')
     +button('Spring', 'spring')
-    +button('Summer', 'summer')
+    +button('Summer', 'summer', 'portfolio-active')
     +button('Autumn', 'autumn')  
   .portfolio-gallery
-    .img
-      img.portfolio-pic(src='assets/images/autumn/1.jpg' alt='portfolio-img')
-    .img-one
-      img.portfolio-pic(src='assets/images/autumn/2.jpg' alt='portfolio-img')
-    .img-two
-      img.portfolio-pic(src='assets/images/autumn/3.jpg' alt='portfolio-img')
-    .img-three
-      img.portfolio-pic(src='assets/images/autumn/4.jpg' alt='portfolio-img')
-    .img-four
-      img.portfolio-pic(src='assets/images/autumn/5.jpg' alt='portfolio-img')
-    .img-five
-      img.portfolio-pic(src='assets/images/autumn/6.jpg' alt='portfolio-img')
+    while i < cardNum
+      .img.portfolio-img
+        img.portfolio-pic(src=`assets/images/summer/${++i}.jpg` alt='portfolio-img')
 
-      //'portfolio-btn__active'
+    //- .img
+    //-   img.portfolio-pic(src='assets/images/autumn/1.jpg' alt='portfolio-img')
+    //- .img
+    //-   img.portfolio-pic(src='assets/images/autumn/2.jpg' alt='portfolio-img')
+    //- .img
+    //-   img.portfolio-pic(src='assets/images/autumn/3.jpg' alt='portfolio-img')
+    //- .img
+    //-   img.portfolio-pic(src='assets/images/autumn/4.jpg' alt='portfolio-img')
+    //- .img
+    //-   img.portfolio-pic(src='assets/images/autumn/5.jpg' alt='portfolio-img')
+    //- .img
+    //-   img.portfolio-pic(src='assets/images/autumn/6.jpg' alt='portfolio-img')

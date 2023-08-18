@@ -4,80 +4,91 @@
 
 //PRICE
 .price {
-    margin-bottom: 11rem;
+    // width: 140rem;
     width: 100%;
-
+    padding: 10rem 2rem;
     &-title {
-        @include fontTitle;
-    
+        @include titleStyles;
     }
-
     &-cards {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 2.5rem;
-        
-        &__button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        &__btn {
-            font-family: inherit;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 2rem;
-            line-height: 200%;
-            text-align: center;
-            border: none;
-            color: $bgColor;
-            padding: .8rem 3rem .7rem 3rem;
-            max-width: 22rem;
-            width: 100%;
-            background: $c-gold;
-            cursor: pointer;
-
-            &:hover {
-                background-color: $hvrColor;
-                color: $c-white;
-            }
-            &:focus {
-                outline: none;
-                box-shadow: 0 0 0 .1rem $fcsColor;
-            }
-
-        }
-    } 
+    }
     &-card {
         max-width: 45rem;
         width: 100%;
-        border: solid .3rem $c-gold;
-        padding: 4.3rem 11.5rem;
-
+        padding: 4.3rem;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        border: .3rem solid $c-gold;
+        // &:nth-child(1) &__text {
+        //     padding-right: 9.033rem;
+        //     padding-left: 9.067rem;
+        // }
+        // &:nth-child(2) &__text {
+        //     // padding: 0 9rem;
+        //     padding-right: 9.198rem;
+        //     padding-left: 9.302rem;
+        // }
+        // &:nth-child(3) &__text {
+        //     padding-right: 7.064rem;
+        //     padding-left: 7.236rem;
+        // }
         &__title {
-            font-family: Merriweather;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 2.8rem;
-            line-height: 5.6rem;
-            text-align: center;
-            color: $c-white;
             margin-bottom: 2rem;
+            font-family: Merriweather;
+            font-size: 2.8rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 200%;
+            color: inherit;
+            // color: $c-white;
+            text-align: center;
+            text-transform: capitalize;   
         }
         &__subtitle {
-            font-family: Merriweather;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 2.4rem;
-            line-height: 4.8rem;
-            text-align: center;
-            color: $c-gold;
             margin-bottom: 2rem;
+            font-family: Merriweather;
+            font-size: 2.4rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 200%;
+            color: $c-gold;
+            text-align: center;   
         }
         &__text {
-            @include cardText;
+            width: 36.4rem;
+            // padding: 0 9rem;
             margin-bottom: 4rem;
+            font-family: Inter;
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 200%;
+            color: inherit;
+            // color: $c-white;
+            text-align: center;
+              
+        }
+        &__button {
+            text-align: center;
+        }
+        &__btn {
+            @include btnStyles;
+            color: inherit;
+            border: none;
+            background: $c-gold;    
+        }
+    }
+}
+//  ADAPTIVE 
+@media screen and (max-width: 768px) {
+    .price {
+        &-title {
+            font-size: 3.2rem;
         }
     }
 }

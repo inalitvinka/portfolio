@@ -1,5 +1,5 @@
 {
-  "name": "diplom",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,9 +15,9 @@
   "author": "Ina Litvinka <inalitvinka@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/inalitvinka/diplom/issues"
+    "url": "https://github.com/inalitvinka/portfolioTest/issues"
   },
-  "homepage": "https://github.com/inalitvinka/diplom#readme",
+  "homepage": "https://github.com/inalitvinka/portfolioTest#readme",
   "devDependencies": {
     "browser-sync": "^2.27.5",
     "del": "^6.0.0",

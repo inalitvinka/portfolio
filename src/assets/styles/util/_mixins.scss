@@ -1,3 +1,62 @@
+@mixin titleStyles {
+    // margin: 0 auto 6rem;
+    margin-bottom: 6rem;
+    font-family: Merriweather;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 200%;
+    color: $c-gold;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    &:before,
+    &:after {
+      content: '';
+      display: inline-block;
+      position: relative;
+    //   top: -1px;
+      width: 20%;
+      height: .2rem;
+      vertical-align: middle;
+      background: $c-gold;
+    }
+    &:before {
+      left: -2rem;
+      margin-left: -50%;
+    }
+    &:after {
+      left: 2rem;
+      margin-right: -50%;
+    } 
+    & > span {
+        display: inline-block;
+        vertical-align: middle;
+        white-space: normal;
+        max-width: 90%;    
+    }
+}
+@mixin btnStyles {
+    max-width: 22rem;
+    width: 100%;
+    padding: .8rem 0 .7rem;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 4rem;
+    text-align: center;
+    &:hover {
+        color: $c-white;
+        transition: color .4s ease;
+    }    
+}
+@mixin hoverSVG {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  transition: all .4s ease;
+  cursor: pointer;
+}
 @mixin fontTitle {
     font-family: Merriweather;
     font-style: normal;

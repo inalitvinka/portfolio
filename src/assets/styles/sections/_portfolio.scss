@@ -4,78 +4,79 @@
 
 //PORTFOLIO
 .portfolio {
-    margin-bottom: 10rem;
-    width: 100%;
-
-    & span {
-        
-        &:before {         
-            right: 20rem;                    
-        }
-        &:after {         
-            left: 20rem;                    
-        }
-    }
-
+    padding: 10rem 2rem 0;
     &-title {
-        @include fontTitle;
-    
+        @include titleStyles;
     }
-
     &-buttons {
         margin-bottom: 6rem;
+        padding: 0 4rem;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
         gap: .5rem;
-
     }
-    
     &-btn {
-        font-family: inherit;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 2rem;
-        line-height: 4rem;
-        text-align: center;
+        @include btnStyles;
         color: $c-gold;
         border: .2rem solid $c-gold;
-        padding: .8rem .79rem .7rem .79rem;
-        max-width: 22rem;
-        width: 100%;
         background: transparent;
-        cursor: pointer;
-    
-        // &__active {
-        //     background: $c-gold;
-        //     color: inherit;
-        // }
-        &:hover {
-            background-color: $hvrColor;
-            color: $c-white;
-        }
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 0 .1rem $fcsColor;
-        }
     }
-
+    &-active {
+        background: $c-gold;
+        color: inherit;
+    }
+    // &-btnlight {
+    //     &:hover {
+    //         color: $c-dark; 
+    //     }
+    // }
+    // &-light__active {
+    //     &:hover {
+    //         color: $c-white; 
+    //     }
+    // }
     &-gallery {
-        max-width: 140rem;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: "img img-one img-two"
-                             "img-three img-four img-five";
-        row-gap: 2.5rem; 
-        column-gap: 2.5rem;                    
-    } 
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        // overflow: hidden;
+
+    }
+    &-img,
     &-pic {
         max-width: 45rem;
-        width: 100%;
+        // width: 30rem;
+        // width: 100%;
     }
 }
-.active {
+.portfolo-light {
     background: $c-gold;
-    color: inherit;
+    color: $c-dark;
+    border: none;
+    &:hover {
+        color: $c-gold;
+        background: rgba(0, 0, 0, .8);
+        transition: all .4s ease;
+    }
+}
+.portfolio-light__active {
+    background: rgba(0, 0, 0, .8);
+    color: $c-gold;
+    &:hover {
+        color: $c-white;
+        transition: all .4s ease;
+    }
+}
+
+// ADAPTIVE
+@media screen and (max-width: 768px) {
+    .portfolio {
+        padding: 9.3rem 2rem 0;
+        &-title {
+            margin-bottom: 5rem;
+            font-size: 3.2rem;  
+        }
+    }
 }

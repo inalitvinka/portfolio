@@ -4,59 +4,124 @@
 
 //HERO
 .hero {
-    background: url('../images/header-bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center -9rem;
-    background-size: cover;
-    max-width: 144rem;
-    height: 91rem;
-    width: 100%;
-    margin-bottom: 10rem;
-
-    &-name {
-        padding: 16rem 86rem 33rem 7.5rem;
-    }
-    
+    padding: 16rem 0 33rem 8rem;
     &-title {
+        margin-bottom: 1rem;
         font-family: Merriweather;
-        font-style: normal;
-        font-weight: bold;
         font-size: 6rem;
-        line-height: 12rem;
-        color: $c-white;
-        margin-bottom: 1rem; 
+        font-style: normal;
+        font-weight: 700;
+        line-height: 200%;
+        color: inherit;
+        // color: $c-white;
     }
     &-text {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 2rem;
-        line-height: 4rem;
-        color: $c-white;
+        max-width: 47rem;
+        width: 100%;
         margin-bottom: 2.5rem;
+        font-family: Inter;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 200%;
+        color: inherit;
+        // color: $c-white;
     }
     &-btn {
-        font-family: inherit;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 2rem;
-        line-height: 4rem;
-        text-align: center;
-        color: inherit;
+        @include btnStyles;
+        color: $c-dark;
         border: none;
-        padding: .8rem .72rem .7rem .73rem;
-        max-width: 22rem;
-        width: 100%;
         background: $c-gold;
         cursor: pointer;
-    
-        &:hover {
-            background-color: $hvrColor;
-            color: $c-white;
-        }
-    
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 0 .1rem $fcsColor;
-        }
-    } 
+        // &:focus {
+        //     outline: none;
+        //     box-shadow: 0 0 0 .1rem $fcsColor;
+        // }
+    }                
 }
+// ADAPTIVE
+@media screen and (max-width: 970px) {
+    .hero {
+        padding-top: 10rem;
+        &-text {
+            margin-bottom: 6rem;
+        }
+    }
+}
+@media screen and (max-width: 920px) {
+    .hero {
+        padding: 7.8rem 0 26.6rem 6rem;
+        &-title {
+            margin-bottom: 2rem;
+            font-size: 3.2rem;
+            font-weight: 400;
+        }
+        &-text {
+            margin-bottom: 6rem;
+            max-width: 39rem;
+            line-height: normal;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .hero {
+        padding-bottom: 15.9rem;
+    }
+}
+// .hero {
+//     background: url('../images/header-bg.jpg');
+//     background-repeat: no-repeat;
+//     background-position: center -9rem;
+//     background-size: cover;
+//     max-width: 144rem;
+//     height: 91rem;
+//     width: 100%;
+//     margin-bottom: 10rem;
+
+//     &-name {
+//         padding: 16rem 86rem 33rem 7.5rem;
+//     }
+    
+//     &-title {
+//         font-family: Merriweather;
+//         font-style: normal;
+//         font-weight: bold;
+//         font-size: 6rem;
+//         line-height: 12rem;
+//         color: $c-white;
+//         margin-bottom: 1rem; 
+//     }
+//     &-text {
+//         font-style: normal;
+//         font-weight: normal;
+//         font-size: 2rem;
+//         line-height: 4rem;
+//         color: $c-white;
+//         margin-bottom: 2.5rem;
+//     }
+//     &-btn {
+//         font-family: inherit;
+//         font-style: normal;
+//         font-weight: normal;
+//         font-size: 2rem;
+//         line-height: 4rem;
+//         text-align: center;
+//         color: inherit;
+//         border: none;
+//         padding: .8rem .72rem .7rem .73rem;
+//         max-width: 22rem;
+//         width: 100%;
+//         background: $c-gold;
+//         cursor: pointer;
+    
+//         &:hover {
+//             background-color: $hvrColor;
+//             color: $c-white;
+//         }
+    
+//         &:focus {
+//             outline: none;
+//             box-shadow: 0 0 0 .1rem $fcsColor;
+//         }
+//     } 
+// }

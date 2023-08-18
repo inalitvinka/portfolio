@@ -1,85 +1,85 @@
 @import "../util/var";
 @import "../util/mixins";
 
-
-//SKILLS
+// SKILLS
 
 .skills {
-    max-width: 140rem;
-    width: 100%;
-    margin-bottom: 11rem;
-
+    // width: 100%;
+    padding: 10rem 2rem 0;
     &-title {
-        @include fontTitle;
-
+        @include titleStyles;
     }
-
     &-cards {
         display: flex;
+        justify-content: center;
+        gap: 4rem;
         flex-wrap: wrap;
-        justify-content: space-between;
     }
     &-card {
-        max-width: 28rem;
+        max-width: 32rem;
         width: 100%;
+        padding: 0 2rem .8rem;
+        // border: solid .2rem $c-white;
 
         &__img {
-            display: flex;
-            justify-content: center;
             margin-bottom: 5rem;
+            text-align: center;  
         }
-
         &__pic {
             max-width: 6.2rem;
-            width: 100%;
-            
         }
         &__pic2 {
             max-width: 6rem;
-            width: 100%;
         }
         &__pic3 {
             max-width: 6.6rem;
-            width: 100%;
         }
         &__pic4 {
             max-width: 3.2rem;
-            width: 100%;
         }
 
         &__title {
-            font-style: normal;
-            font-weight: bold;
-            font-size: 2rem;
-            line-height: 4rem;
-            text-align: center;
-            color: $c-white;
             margin-bottom: 2rem;
+            font-family: Inter;
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 200%;
+            color: inherit; 
+            // color: $c-white;
+            text-align: center;   
         }
         &__text {
-            @include cardText;
+            font-family: Inter;
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 200%;
+            color: inherit;
+            // color: $c-white;
+            text-align: center;
         }
     }
 }
-span {
-    position: relative;
-
-    &:before {
-        display: block;                  
-        width: 23rem;                    
-        content: '';                     
-        position: absolute;              
-        border-bottom: .2rem solid $c-gold;   
-        top:50%;                         
-        right: 13rem;                    
-    }
-    &:after {
-        display: block;
-        width: 23rem;
-        content: '';
-        position: absolute;
-        border-bottom: .2rem solid $c-gold;
-        top:50%;
-        left: 13rem; 
+// ADAPTIVE
+@media screen and (max-width: 768px) {
+    .skills {
+        padding: 8rem 2rem 1.3rem;
+        &-title {
+            margin-bottom: 3.6rem;
+            font-size: 3.2rem;
+        }
+        &-cards {
+            column-gap: 4.4rem;
+            row-gap: 3.6rem;
+        }
+        &-card {
+            &__img {
+                margin-bottom: 3rem;
+            }
+            &__text {
+                line-height: normal;
+            }
+        }
     }
 }
