@@ -142,7 +142,104 @@ const i18Obj = {
 }
 
 //  VIDEO PLAYER
-// const VIDEO_SWITCH = document.querySelector('video-item');
+const PLAYER = document.querySelector('#player');
+const POSTER = document.querySelector('#poster');
+const PLAY_SVG = document.querySelector('#play-svg');
+const PLAY = document.querySelector('#play');
+const PAUSE = document.querySelector('#pause');
+const MUTED = document.querySelector('#muted');
+const UNMUTED = document.querySelector('#unmuted');
+const VOLUME = document.querySelector('#volume');
+const PROGRESS = document.querySelector('#progress');
+// const SLIDER = document.querySelector('#slider');
+const TIME = document.querySelector('#time');
+// document.querySelector('#volume').oninput = volume;
+const VIDEO = document.querySelector('#video-screen');
+
+function play() {
+    VIDEO.play();
+    PLAY.classList.add('video-hide');
+    PLAY_SVG.classList.add('video-hide');
+    PAUSE.classList.remove('video-hide');
+}
+function pause() {
+    VIDEO.pause();
+    PAUSE.classList.add('video-hide');
+    PLAY.classList.remove('video-hide');
+    PLAY_SVG.classList.remove('video-hide');
+}
+function changeVolume() {
+    let volume = +this.value;
+    console.log(volume);
+    VIDEO.volume = volume / 100;
+    console.log(VIDEO.volume);
+    if (volume === 0) {
+        MUTED.classList.add('video-hide');
+        UNMUTED.classList.remove('video-hide');
+    } else {
+        MUTED.classList.remove('video-hide');
+        UNMUTED.classList.add('video-hide');
+    }
+    return volume;
+}
+function muted() {
+    VIDEO.volume = 0;
+    VOLUME.value = 0;
+    MUTED.classList.add('video-hide');
+    UNMUTED.classList.remove('video-hide'); 
+}
+function unmuted() {
+    VIDEO.volume = .5;
+    VOLUME.value = 50;
+    MUTED.classList.remove('video-hide');
+    UNMUTED.classList.add('video-hide');
+}
+const _getCurrentTime = current => current < 10 ? `0:0:0${Math.trunc(current)}` : `0:0:${Math.trunc(current)}`;
+function updateProgress() {
+    const FULL_TIME = VIDEO.duration;
+    const CURRENT_TIME = VIDEO.currentTime;
+    PROGRESS.value = CURRENT_TIME / FULL_TIME * 100;
+    if (FULL_TIME === CURRENT_TIME) {
+        pause();
+        POSTER.classList.remove('video-hide');
+        PLAYER.classList.remove('video-border');
+    }
+    console.log(CURRENT_TIME)
+    TIME.innerHTML = `${_getCurrentTime(CURRENT_TIME)} / 0:0:${Math.trunc(FULL_TIME)}`;
+}
+function changeProgress() {
+    const PROGRESS_WIDTH = this.offsetWidth;
+    const CURRENT_POSITION = event.offsetX;
+    // SLIDER.offsetX = CURRENT_POSITION;
+    const PERCENT = CURRENT_POSITION / PROGRESS_WIDTH;
+    this.value = PERCENT * 100;
+    pause();
+    VIDEO.currentTime = PERCENT * VIDEO.duration
+    play();
+}
+document.addEventListener('click', event => {
+    const TARGET_VALUE = event.target.dataset.play;
+    if (TARGET_VALUE === 'play') {
+        play();
+    }
+    if (TARGET_VALUE === 'playsvg') {
+        POSTER.classList.add('video-hide');
+        PLAYER.classList.add('video-border');
+        play();
+    }
+    if (TARGET_VALUE === 'pause') {
+        pause();
+    }
+    if (TARGET_VALUE === 'muted') {
+        muted();
+    }
+    if (TARGET_VALUE === 'unmuted') {
+        unmuted();
+    }
+})
+VOLUME.addEventListener('input', changeVolume);
+VIDEO.addEventListener('timeupdate', updateProgress);
+PROGRESS.addEventListener('click', changeProgress);
 
 //    TRANSLATE
 const _getTranslate = lang => {
@@ -190,7 +287,6 @@ getLanguageValue();
 
 // const PORTFOLIO_ACTIVE = document.querySelector('.portfolio-active');
 // PORTFOLIO_ACTIVE.style.background = 'rgba(0, 0, 0, .8)';
-
 const SWITCH = document.querySelector('.header-switch');
 SWITCH.addEventListener('click', event => {
     if (localStorage.getItem('theme') === 'light') {
