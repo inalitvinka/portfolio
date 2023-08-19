@@ -142,8 +142,8 @@ const i18Obj = {
 }
 
 //  VIDEO PLAYER
-// const BUTTONS = document.querySelectorAll('.video-playbuttons');
-// const POSTER = document.querySelector('#poster');
+const PLAYER = document.querySelector('#player');
+const POSTER = document.querySelector('#poster');
 const PLAY_SVG = document.querySelector('#play-svg');
 const PLAY = document.querySelector('#play');
 const PAUSE = document.querySelector('#pause');
@@ -151,9 +151,9 @@ const MUTED = document.querySelector('#muted');
 const UNMUTED = document.querySelector('#unmuted');
 const VOLUME = document.querySelector('#volume');
 const PROGRESS = document.querySelector('#progress');
+// const SLIDER = document.querySelector('#slider');
 const TIME = document.querySelector('#time');
 // document.querySelector('#volume').oninput = volume;
-
 const VIDEO = document.querySelector('#video-screen');
 
 function play() {
@@ -174,7 +174,6 @@ function changeVolume() {
     VIDEO.volume = volume / 100;
     console.log(VIDEO.volume);
     if (volume === 0) {
-        console.log('lol');
         MUTED.classList.add('video-hide');
         UNMUTED.classList.remove('video-hide');
     } else {
@@ -195,17 +194,23 @@ function unmuted() {
     MUTED.classList.remove('video-hide');
     UNMUTED.classList.add('video-hide');
 }
+const _getCurrentTime = current => current < 10 ? `0:0:0${Math.trunc(current)}` : `0:0:${Math.trunc(current)}`;
 function updateProgress() {
     const FULL_TIME = VIDEO.duration;
     const CURRENT_TIME = VIDEO.currentTime;
     PROGRESS.value = CURRENT_TIME / FULL_TIME * 100;
-    TIME.innerHTML = `${Math.trunc(VIDEO.currentTime)} / ${Math.trunc(FULL_TIME)}`
-    // console.log(VIDEO.duration);
-    // console.log(Math.trunc(VIDEO.currentTime));
+    if (FULL_TIME === CURRENT_TIME) {
+        pause();
+        POSTER.classList.remove('video-hide');
+        PLAYER.classList.remove('video-border');
+    }
+    console.log(CURRENT_TIME)
+    TIME.innerHTML = `${_getCurrentTime(CURRENT_TIME)} / 0:0:${Math.trunc(FULL_TIME)}`;
 }
 function changeProgress() {
     const PROGRESS_WIDTH = this.offsetWidth;
     const CURRENT_POSITION = event.offsetX;
+    // SLIDER.offsetX = CURRENT_POSITION;
     const PERCENT = CURRENT_POSITION / PROGRESS_WIDTH;
     this.value = PERCENT * 100;
     pause();
@@ -214,9 +219,12 @@ function changeProgress() {
 }
 document.addEventListener('click', event => {
     const TARGET_VALUE = event.target.dataset.play;
-    // console.log(TARGET_VALUE);
     if (TARGET_VALUE === 'play') {
-        // POSTER.classList.add('video-hide');
+        play();
+    }
+    if (TARGET_VALUE === 'playsvg') {
+        POSTER.classList.add('video-hide');
+        PLAYER.classList.add('video-border');
         play();
     }
     if (TARGET_VALUE === 'pause') {
@@ -231,7 +239,8 @@ document.addEventListener('click', event => {
 })
 VOLUME.addEventListener('input', changeVolume);
 VIDEO.addEventListener('timeupdate', updateProgress);
-PROGRESS.addEventListener('click', changeProgress)
+PROGRESS.addEventListener('click', changeProgress);
+
 //    TRANSLATE
 const _getTranslate = lang => {
     const ELEMENTS_TO_TRANSLATE = document.querySelectorAll('[data-i18n]');
@@ -278,7 +287,6 @@ getLanguageValue();
 
 // const PORTFOLIO_ACTIVE = document.querySelector('.portfolio-active');
 // PORTFOLIO_ACTIVE.style.background = 'rgba(0, 0, 0, .8)';
-
 const SWITCH = document.querySelector('.header-switch');
 SWITCH.addEventListener('click', event => {
     if (localStorage.getItem('theme') === 'light') {
