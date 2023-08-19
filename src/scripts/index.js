@@ -142,7 +142,75 @@ const i18Obj = {
 }
 
 //  VIDEO PLAYER
-// const VIDEO_SWITCH = document.querySelector('video-item');
+// const BUTTONS = document.querySelectorAll('.video-playbuttons');
+// const POSTER = document.querySelector('#poster');
+const PLAY_SVG = document.querySelector('#play-svg');
+const PLAY = document.querySelector('#play');
+const PAUSE = document.querySelector('#pause');
+const MUTED = document.querySelector('#muted');
+const UNMUTED = document.querySelector('#unmuted');
+const VOLUME = document.querySelector('#volume');
+// document.querySelector('#volume').oninput = volume;
+
+const VIDEO = document.querySelector('#video-screen');
+
+function play() {
+    VIDEO.play();
+    PLAY.classList.add('video-hide');
+    PLAY_SVG.classList.add('video-hide');
+    PAUSE.classList.remove('video-hide');
+}
+function pause() {
+    VIDEO.pause();
+    PAUSE.classList.add('video-hide');
+    PLAY.classList.remove('video-hide');
+    PLAY_SVG.classList.remove('video-hide');
+}
+function changeVolume() {
+    let volume = +this.value;
+    console.log(volume);
+    VIDEO.volume = volume / 100;
+    console.log(VIDEO.volume);
+    if (volume === 0) {
+        console.log('lol');
+        MUTED.classList.add('video-hide');
+        UNMUTED.classList.remove('video-hide');
+    } else {
+        MUTED.classList.remove('video-hide');
+        UNMUTED.classList.add('video-hide');
+    }
+    return volume;
+}
+function muted() {
+    VIDEO.volume = 0;
+    VOLUME.value = 0;
+    MUTED.classList.add('video-hide');
+    UNMUTED.classList.remove('video-hide'); 
+}
+function unmuted() {
+    VIDEO.volume = .5;
+    VOLUME.value = 50;
+    MUTED.classList.remove('video-hide');
+    UNMUTED.classList.add('video-hide');
+}
+document.addEventListener('click', event => {
+    const TARGET_VALUE = event.target.dataset.play;
+    console.log(TARGET_VALUE);
+    if (TARGET_VALUE === 'play') {
+        // POSTER.classList.add('video-hide');
+        play();
+    }
+    if (TARGET_VALUE === 'pause') {
+        pause()
+    }
+    if (TARGET_VALUE === 'muted') {
+        muted();
+    }
+    if (TARGET_VALUE === 'unmuted') {
+        unmuted();
+    }
+})
+VOLUME.addEventListener('input', changeVolume);
 
 //    TRANSLATE
 const _getTranslate = lang => {

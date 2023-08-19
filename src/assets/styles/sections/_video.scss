@@ -18,12 +18,15 @@
         width: 100%;
     }
     &-poster {
+        position: absolute;
+        z-index: 1;
         max-width: 144rem;
         width: 100%;
     }
     &-item {
         width: 13rem;
         position: absolute;
+        z-index: 2;
         top: 41%;
         left: 45.5%;
         &:hover {
@@ -33,6 +36,33 @@
     &-button {
         background: inherit;
     }
+    &-controls {
+        padding: .5rem 3rem;
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    &-muted__item:hover,
+    &-pause__item:hover,
+    &-play__item:hover,
+    &-item:hover {
+        filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+        transition: all .4s ease;
+        cursor: pointer;
+    }
+    &-muted,
+    &-play,
+    &-pause {
+        background: inherit;
+    }
+    &-hide {
+        display: none;
+    }
+    &-volume {
+        max-width: 20rem;
+        width: 100%;
+    }
+    
 }
 //  ADAPTIVE 
 @media screen and (max-width: 768px) {
