@@ -150,6 +150,8 @@ const PAUSE = document.querySelector('#pause');
 const MUTED = document.querySelector('#muted');
 const UNMUTED = document.querySelector('#unmuted');
 const VOLUME = document.querySelector('#volume');
+const PROGRESS = document.querySelector('#progress');
+const TIME = document.querySelector('#time');
 // document.querySelector('#volume').oninput = volume;
 
 const VIDEO = document.querySelector('#video-screen');
@@ -193,15 +195,32 @@ function unmuted() {
     MUTED.classList.remove('video-hide');
     UNMUTED.classList.add('video-hide');
 }
+function updateProgress() {
+    const FULL_TIME = VIDEO.duration;
+    const CURRENT_TIME = VIDEO.currentTime;
+    PROGRESS.value = CURRENT_TIME / FULL_TIME * 100;
+    TIME.innerHTML = `${Math.trunc(VIDEO.currentTime)} / ${Math.trunc(FULL_TIME)}`
+    // console.log(VIDEO.duration);
+    // console.log(Math.trunc(VIDEO.currentTime));
+}
+function changeProgress() {
+    const PROGRESS_WIDTH = this.offsetWidth;
+    const CURRENT_POSITION = event.offsetX;
+    const PERCENT = CURRENT_POSITION / PROGRESS_WIDTH;
+    this.value = PERCENT * 100;
+    pause();
+    VIDEO.currentTime = PERCENT * VIDEO.duration
+    play();
+}
 document.addEventListener('click', event => {
     const TARGET_VALUE = event.target.dataset.play;
-    console.log(TARGET_VALUE);
+    // console.log(TARGET_VALUE);
     if (TARGET_VALUE === 'play') {
         // POSTER.classList.add('video-hide');
         play();
     }
     if (TARGET_VALUE === 'pause') {
-        pause()
+        pause();
     }
     if (TARGET_VALUE === 'muted') {
         muted();
@@ -211,7 +230,8 @@ document.addEventListener('click', event => {
     }
 })
 VOLUME.addEventListener('input', changeVolume);
-
+VIDEO.addEventListener('timeupdate', updateProgress);
+PROGRESS.addEventListener('click', changeProgress)
 //    TRANSLATE
 const _getTranslate = lang => {
     const ELEMENTS_TO_TRANSLATE = document.querySelectorAll('[data-i18n]');

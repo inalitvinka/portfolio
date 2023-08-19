@@ -16,7 +16,9 @@ section.video.container
           img.video-play__item(data-play='play' src='assets/images/video/play.svg' alt='video-play')
         button.video-pause#pause.video-hide
           img.video-pause__item(data-play='pause' src='assets/images/video/pause.svg' alt='video-play')
-      .video-progress
+      .video-progressbar
+        p.video-time#time 
+        progress.video-progress#progress(value=0 max=100) 
         //- input.video-slider.video-progress__slider(type='range' name='playbackRate' value='1' step='.1' min='.5' max='2')
       button#muted.video-muted
         img.video-muted__item(data-play='muted' src='assets/images/video/volume.svg' alt='video-play')
