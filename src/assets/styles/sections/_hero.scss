@@ -33,10 +33,6 @@
         border: none;
         background: $c-gold;
         cursor: pointer;
-        // &:focus {
-        //     outline: none;
-        //     box-shadow: 0 0 0 .1rem $fcsColor;
-        // }
     }                
 }
 // ADAPTIVE
@@ -66,6 +62,14 @@
 @media screen and (max-width: 768px) {
     .hero {
         padding-bottom: 15.9rem;
+    }
+}
+@media screen and (max-width: 733px) {
+    .hero {
+        padding: 7.8rem 0 15.9rem 0;
+        &-text {
+            max-width: 35rem;
+        }
     }
 }
 @media screen and (max-width: 460px) {

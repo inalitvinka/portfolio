@@ -94,9 +94,40 @@ body {
 }
 @media screen and (max-width: 768px) {
     .background-wrapper {
-        // width: 768rem;
-        // height: 590px;
         background-position: 1.5rem -3rem;
         background-size: auto 103.5%;
+    }
+}
+@media screen and (max-width: 733px) {
+    .background-wrapper {
+        background-position: -3rem -3rem;
+        background-size: auto 95%;
+    }
+}
+@media screen and (max-width: 654px) {
+    .background-wrapper {
+        background-size: auto 90%;
+    }
+}
+@media screen and (max-width: 615px) {
+    .background-wrapper {
+        background-position: -10rem -3rem;
+        background-size: cover;
+    }
+}
+@media screen and (max-width: 550px) {
+    .background-wrapper {
+        background-position: -22rem -3rem;
+        background-size: auto 200;
+    }
+}
+@media screen and (max-width: 391px) {
+    .background-wrapper {
+        background-position: -30rem -3rem;
+    }
+}
+@media screen and (max-width: 333px) {
+    .background-wrapper {
+        background-position: -33rem -3rem;
     }
 }

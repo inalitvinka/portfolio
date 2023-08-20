@@ -100,16 +100,17 @@
     }
     .nav {
         // display: none;
+        
         position: fixed;
         z-index: 2;
         height: 100%;
         max-width: 78%;
         top: 0;
         // right: 0;
-        right: -200%;
+        right: -62rem;
         background: #000;
         transition: all 1s;
-        // overflow-x: hidden; // ????
+        overflow-x: hidden;
         margin-right: 0;
         padding: 13.4rem 34.3rem 0 12.7rem;
         &-list {
@@ -130,8 +131,38 @@
     }
     
 }
-// @media screen and (max-width: 601px) {
-//     .nav {
-
-//     }
-// }
+@media screen and (max-width: 733px) {
+    .header {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media screen and (max-width: 426px) {
+    .nav {
+        &-link {
+            font-size: 3rem;
+        }
+        &.open {
+            right: -5rem;
+        }
+    }
+}
+@media screen and (max-width: 376px) {
+    .header {
+        &-light,
+        &-dark {
+        margin-left: 1.5rem;
+    }
+    &-lang {
+        margin-left: auto;
+        &_item:nth-of-type(3) {
+            margin-left: 1rem;
+        }
+    }
+    }
+    .nav {
+        &.open {
+            right: -10rem;
+        }
+    }
+}

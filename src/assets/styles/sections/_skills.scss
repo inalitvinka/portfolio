@@ -62,6 +62,11 @@
     }
 }
 // ADAPTIVE
+@media screen and (max-width: 1200px) {
+    .skills {
+        padding-top: 0;
+    }
+}
 @media screen and (max-width: 768px) {
     .skills {
         padding: 8rem 2rem 1.3rem;
@@ -83,9 +88,14 @@
         }
     }
 }
+@media screen and (max-width: 733px) {
+    .skills {
+        padding-top: 5rem;
+    }
+}
 @media screen and (max-width: 460px) {
     .skills {
-        padding: 6rem 2rem .8rem;
+        padding: 5rem 2rem .8rem;
         &-title {
             font-size: 3rem;
         }
