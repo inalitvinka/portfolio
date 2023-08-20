@@ -143,8 +143,9 @@ const i18Obj = {
 
 //  VIDEO PLAYER
 const PLAYER = document.querySelector('#player');
-const POSTER = document.querySelector('#poster');
+// const POSTER = document.querySelector('#poster');
 const PLAY_SVG = document.querySelector('#play-svg');
+const CONTROLS = document.querySelector('#controls');
 const PLAY = document.querySelector('#play');
 const PAUSE = document.querySelector('#pause');
 const MUTED = document.querySelector('#muted');
@@ -158,6 +159,7 @@ const VIDEO = document.querySelector('#video-screen');
 
 function play() {
     VIDEO.play();
+    CONTROLS.classList.remove('video-hide');
     PLAY.classList.add('video-hide');
     PLAY_SVG.classList.add('video-hide');
     PAUSE.classList.remove('video-hide');
@@ -201,8 +203,8 @@ function updateProgress() {
     PROGRESS.value = CURRENT_TIME / FULL_TIME * 100;
     if (FULL_TIME === CURRENT_TIME) {
         pause();
-        POSTER.classList.remove('video-hide');
-        PLAYER.classList.remove('video-border');
+        // POSTER.classList.remove('video-hide');
+        // PLAYER.classList.remove('video-border');
     }
     console.log(CURRENT_TIME)
     TIME.innerHTML = `${_getCurrentTime(CURRENT_TIME)} / 0:0:${Math.trunc(FULL_TIME)}`;
@@ -223,7 +225,7 @@ document.addEventListener('click', event => {
         play();
     }
     if (TARGET_VALUE === 'playsvg') {
-        POSTER.classList.add('video-hide');
+        // POSTER.classList.add('video-hide');
         PLAYER.classList.add('video-border');
         play();
     }
