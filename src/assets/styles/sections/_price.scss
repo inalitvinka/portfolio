@@ -20,23 +20,7 @@
         max-width: 45rem;
         width: 100%;
         padding: 4.3rem;
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
         border: .3rem solid $c-gold;
-        // &:nth-child(1) &__text {
-        //     padding-right: 9.033rem;
-        //     padding-left: 9.067rem;
-        // }
-        // &:nth-child(2) &__text {
-        //     // padding: 0 9rem;
-        //     padding-right: 9.198rem;
-        //     padding-left: 9.302rem;
-        // }
-        // &:nth-child(3) &__text {
-        //     padding-right: 7.064rem;
-        //     padding-left: 7.236rem;
-        // }
         &__title {
             margin-bottom: 2rem;
             font-family: Merriweather;
@@ -60,8 +44,7 @@
             text-align: center;   
         }
         &__text {
-            width: 36.4rem;
-            // padding: 0 9rem;
+            // width: 36.4rem;
             margin-bottom: 4rem;
             font-family: Inter;
             font-size: 1.8rem;
@@ -89,6 +72,35 @@
     .price {
         &-title {
             font-size: 3.2rem;
+        }
+    }
+}
+@media screen and (max-width: 460px) {
+    .price {
+        padding: 7rem 2rem;
+        &-title {
+            font-size: 3rem;
+        }
+        &-card {
+            max-width: 38rem;
+            width: 100%;
+            padding: 3.5rem;
+            border: .3rem solid $c-gold;
+            &__title {
+                margin-bottom: 1rem;
+                font-size: 2.5rem;   
+            }
+            &__subtitle {
+                margin-bottom: 1rem;
+                font-size: 2.1rem;   
+            }
+            &__text {
+                margin-bottom: 3rem;
+                font-size: 1.6rem;
+            }
+            &__btn {
+                font-size: 1.8rem;
+            } 
         }
     }
 }

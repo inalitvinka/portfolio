@@ -83,3 +83,37 @@
         }
     }
 }
+@media screen and (max-width: 460px) {
+    .skills {
+        padding: 6rem 2rem .8rem;
+        &-title {
+            font-size: 3rem;
+        }
+        &-cards {
+            row-gap: 4rem;
+        }
+        &-card {
+            max-width: 30rem;
+            &__img {
+                margin-bottom: 2rem;
+            }
+            &__pic {
+                max-width: 5.8rem;
+            }
+            &__pic2 {
+                max-width: 5.6rem;
+            }
+            &__pic3 {
+                max-width: 6.2rem;
+            }
+            &__title {
+                margin-bottom: 1.8rem;
+                font-size: 1.9rem;  
+            }
+            &__text {
+                font-size: 1.6rem;
+            } 
+        }
+        
+    }
+}

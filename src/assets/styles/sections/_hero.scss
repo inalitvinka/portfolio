@@ -68,60 +68,16 @@
         padding-bottom: 15.9rem;
     }
 }
-// .hero {
-//     background: url('../images/header-bg.jpg');
-//     background-repeat: no-repeat;
-//     background-position: center -9rem;
-//     background-size: cover;
-//     max-width: 144rem;
-//     height: 91rem;
-//     width: 100%;
-//     margin-bottom: 10rem;
-
-//     &-name {
-//         padding: 16rem 86rem 33rem 7.5rem;
-//     }
-    
-//     &-title {
-//         font-family: Merriweather;
-//         font-style: normal;
-//         font-weight: bold;
-//         font-size: 6rem;
-//         line-height: 12rem;
-//         color: $c-white;
-//         margin-bottom: 1rem; 
-//     }
-//     &-text {
-//         font-style: normal;
-//         font-weight: normal;
-//         font-size: 2rem;
-//         line-height: 4rem;
-//         color: $c-white;
-//         margin-bottom: 2.5rem;
-//     }
-//     &-btn {
-//         font-family: inherit;
-//         font-style: normal;
-//         font-weight: normal;
-//         font-size: 2rem;
-//         line-height: 4rem;
-//         text-align: center;
-//         color: inherit;
-//         border: none;
-//         padding: .8rem .72rem .7rem .73rem;
-//         max-width: 22rem;
-//         width: 100%;
-//         background: $c-gold;
-//         cursor: pointer;
-    
-//         &:hover {
-//             background-color: $hvrColor;
-//             color: $c-white;
-//         }
-    
-//         &:focus {
-//             outline: none;
-//             box-shadow: 0 0 0 .1rem $fcsColor;
-//         }
-//     } 
-// }
+@media screen and (max-width: 460px) {
+    .hero{
+        &-title {
+            font-size: 3rem;
+        }
+        &-text {
+            font-size: 1.9rem;
+        }
+        &-btn {
+            font-size: 1.8rem;
+        }    
+    }
+}

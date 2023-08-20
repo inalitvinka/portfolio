@@ -16,8 +16,7 @@
         font-size: 2rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 250%;
-        // color: $c-white;    
+        line-height: 250%;   
     }
     &-info {
         @extend .footer-data;
@@ -31,9 +30,7 @@
         max-width: 5rem;
         border-radius: 3rem;
         filter: invert(1);
-        // filter: invert(100%) sepia(1%) saturate(100%) hue-rotate(7deg) brightness(100%) contrast(100%);
         &:hover {
-            // filter: invert(0);
             filter: invert(100%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(70%) contrast(87%);
             transition: all .4s ease;
         }
@@ -41,19 +38,16 @@
     &-rslogo {
         max-width: 10rem;
         width: 100%; 
-        // filter: invert(1) ; 
     }
     &-list {
         display: flex;
         gap: 1.8rem;
     }
-    // &-githublogo:hover,
     &-rslogo:hover,
     &-link:hover {
        @include hoverSVG;
     }
 }
-// .footer-githublogo,
 .svg-light {
     filter: invert(1) ;
     &:hover {
@@ -68,3 +62,19 @@
         transition: all .4s ease;
     }
 }
+// ADPTIVE
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 2.8rem 2rem;
+        flex-direction: column;
+        // row-gap: 2rem;
+        &-githublogo {
+            max-width: 4rem;
+            height: 4rem;
+        }
+        &-rslogo {
+            max-width: 8rem; 
+            margin-bottom: 2rem;
+        }
+    }
+} 

@@ -12,7 +12,7 @@
     &-player {
         position: relative;
         // border: solid .15rem $c-gold;
-        padding: .5rem;
+        // padding: .5rem;
     }
     &-border {
         border: solid .15rem $c-gold;
@@ -26,7 +26,13 @@
         z-index: 2;
         max-width: 144rem;
         width: 100%;
+        // object-fit: contain;
     }
+    // &-pic {
+    //     max-width: 144rem;
+    //     width: 100%;
+    //     object-fit: cover;
+    // }
     &-item {
         width: 13rem;
         position: absolute;
@@ -69,7 +75,9 @@
         accent-color: $c-gold;
     }
     &-time {
-        width: 9rem;
+        max-width: 10rem;
+        width: 100%;
+        font-size: 1rem;
     }
     &-progressbar {
         max-width: 110rem;
@@ -88,7 +96,7 @@
         height: 1.7rem;
         accent-color: $c-gold;
         // background: red;
-        // filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);    
+        // filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
     }
     &-progress__item {
         position: absolute;
@@ -111,7 +119,31 @@
         }
         &-item {
             width: 6.5rem;
-
         }
+        &-controls {
+            padding: .5rem 3rem;
+            gap: 1rem;
+        }
+    }
+}
+@media screen and (max-width: 700px) {
+    .video {
+        &-time {
+            max-width: 8rem;
+            width: 100%;
+            font-size: .7rem;
+        }
+    }
+}
+@media screen and (max-width: 460px) {
+    .video {
+        padding: 7rem 0 0;
+        &-title {
+            font-size: 3rem;
+        }
+        &-item {
+            width: 5.5rem;
+        }
+        
     }
 }
