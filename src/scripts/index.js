@@ -170,6 +170,12 @@ function pause() {
     PLAY.classList.remove('video-hide');
     PLAY_SVG.classList.remove('video-hide');
 }
+function endVideo() {
+    this.src = this.src;
+    PLAYER.classList.remove('video-border');
+    PLAY_SVG.classList.remove('video-hide');
+    CONTROLS.classList.add('video-hide');
+}
 function changeVolume() {
     let volume = +this.value;
     console.log(volume);
@@ -196,18 +202,12 @@ function unmuted() {
     MUTED.classList.remove('video-hide');
     UNMUTED.classList.add('video-hide');
 }
-const _getCurrentTime = current => current < 10 ? `0:0:0${Math.trunc(current)}` : `0:0:${Math.trunc(current)}`;
+const _getCurrentTime = current => current < 10 ? `0:00:0${Math.trunc(current)}` : `0:00:${Math.trunc(current)}`;
 function updateProgress() {
     const FULL_TIME = VIDEO.duration;
     const CURRENT_TIME = VIDEO.currentTime;
     PROGRESS.value = CURRENT_TIME / FULL_TIME * 100;
-    if (FULL_TIME === CURRENT_TIME) {
-        pause();
-        // POSTER.classList.remove('video-hide');
-        // PLAYER.classList.remove('video-border');
-    }
-    console.log(CURRENT_TIME)
-    TIME.innerHTML = `${_getCurrentTime(CURRENT_TIME)} / 0:0:${Math.trunc(FULL_TIME)}`;
+    TIME.innerHTML = `${_getCurrentTime(CURRENT_TIME)} / 0:00:${Math.trunc(FULL_TIME)}`;
 }
 function changeProgress() {
     const PROGRESS_WIDTH = this.offsetWidth;
@@ -225,7 +225,6 @@ document.addEventListener('click', event => {
         play();
     }
     if (TARGET_VALUE === 'playsvg') {
-        // POSTER.classList.add('video-hide');
         PLAYER.classList.add('video-border');
         play();
     }
@@ -240,6 +239,7 @@ document.addEventListener('click', event => {
     }
 })
 VOLUME.addEventListener('input', changeVolume);
+VIDEO.addEventListener('ended', endVideo);
 VIDEO.addEventListener('timeupdate', updateProgress);
 PROGRESS.addEventListener('click', changeProgress);
 
